@@ -4,9 +4,14 @@ import { ElementType } from 'react'
 interface NavItemProps {
   title: string
   icon: ElementType
+  hasChevron?: boolean
 }
 
-export function NavItem({ title, icon: Icon }: NavItemProps) {
+export function NavItem({
+  title,
+  icon: Icon,
+  hasChevron = true,
+}: NavItemProps) {
   return (
     <a
       href="#"
@@ -16,7 +21,9 @@ export function NavItem({ title, icon: Icon }: NavItemProps) {
       <span className="font-medium text-zinc-700 group-hover:text-violet-500">
         {title}
       </span>
-      <ChevronDown className="ml-auto h-5 w-5 text-zinc-400 group-hover:text-violet-300" />
+      {hasChevron && (
+        <ChevronDown className="ml-auto h-5 w-5 text-zinc-400 group-hover:text-violet-300" />
+      )}
     </a>
   )
 }

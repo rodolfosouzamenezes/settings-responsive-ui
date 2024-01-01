@@ -1,5 +1,6 @@
 import { Search } from 'lucide-react'
 import { Logo } from './logo'
+import { MainNavigation } from './MainNavigation'
 
 export function Sidebar() {
   return (
@@ -13,6 +14,7 @@ export function Sidebar() {
           type="text"
         />
       </div>
+      <MainNavigation />
     </aside>
   )
 }

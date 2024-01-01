@@ -1,7 +1,3 @@
-import Image from 'next/image'
-
 export default function Home() {
-  return (
-    <p>Hello</p>
-  )
+  return <p className="text-zinc-950">Hello</p>
 }

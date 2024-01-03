@@ -10,7 +10,7 @@ interface SelectProps extends SelectRadix.SelectProps {
 export function Select({ children, placeholder, ...rest }: SelectProps) {
   return (
     <SelectRadix.Root {...rest}>
-      <SelectRadix.Trigger className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-[placeholder]:text-zinc-600">
+      <SelectRadix.Trigger className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus:border-violet-300 focus:ring-4 focus:ring-violet-50 data-[placeholder]:text-zinc-600">
         <SelectRadix.Value placeholder={placeholder} className="text-black" />
         <SelectRadix.Icon>
           <ChevronDown className="h-5 w-5 text-zinc-500" />

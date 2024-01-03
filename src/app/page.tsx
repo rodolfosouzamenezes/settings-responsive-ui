@@ -3,6 +3,8 @@ import { SettingsTabs } from '@/components/SettingsTabs'
 import * as Input from '@/components/input'
 import * as FileInput from '@/components/Form/FileInput'
 import { Mail } from 'lucide-react'
+import { Select } from '@/components/Form/Select'
+import { SelectItem } from '@/components/Form/Select/SelectItem'
 
 export default function Home() {
   return (
@@ -63,18 +65,16 @@ export default function Home() {
             >
               Email address
             </label>
-            <div className="grid grid-cols-2 gap-6">
-              <Input.Root>
-                <Input.Prefix>
-                  <Mail className="h-5 w-5 text-zinc-500" />
-                </Input.Prefix>
-                <Input.Control
-                  id="email"
-                  type="email"
-                  defaultValue="rodolfosouzaofc@gmail.com"
-                />
-              </Input.Root>
-            </div>
+            <Input.Root>
+              <Input.Prefix>
+                <Mail className="h-5 w-5 text-zinc-500" />
+              </Input.Prefix>
+              <Input.Control
+                id="email"
+                type="email"
+                defaultValue="rodolfosouzaofc@gmail.com"
+              />
+            </Input.Root>
           </div>
 
           <div className="grid grid-cols-form gap-6 pt-5">
@@ -98,11 +98,9 @@ export default function Home() {
             <label htmlFor="role" className="text-sm font-medium text-zinc-700">
               Role
             </label>
-            <div className="grid grid-cols-2 gap-6">
-              <Input.Root>
-                <Input.Control id="role" defaultValue="Front-end Developer" />
-              </Input.Root>
-            </div>
+            <Input.Root>
+              <Input.Control id="role" defaultValue="Front-end Developer" />
+            </Input.Root>
           </div>
 
           <div className="grid grid-cols-form gap-6 pt-5">
@@ -112,7 +110,11 @@ export default function Home() {
             >
               Country
             </label>
-            <div></div>
+            <Select placeholder="Select a country...">
+              <SelectItem text="Brazil" value="br" />
+              <SelectItem text="United States" value="us" />
+              <SelectItem text="United Kingdom" value="uk" />
+            </Select>
           </div>
 
           <div className="grid grid-cols-form gap-6 pt-5">
@@ -122,7 +124,24 @@ export default function Home() {
             >
               timezone
             </label>
-            <div></div>
+            <Select placeholder="Select a timezone...">
+              <SelectItem
+                text="Pacific Standard Time (PST) - UTC−08:00"
+                value="pst"
+              />
+              <SelectItem
+                text="Eastern Standard Time (EST) - UTC-05:00"
+                value="est"
+              />
+              <SelectItem
+                text="Central Standard Time (CST) - UTC-06:00"
+                value="cst"
+              />
+              <SelectItem
+                text="Mountain Standard Time (MST) - UTC-07:00"
+                value="mst"
+              />
+            </Select>
           </div>
 
           <div className="grid grid-cols-form gap-6 pt-5">

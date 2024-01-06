@@ -14,15 +14,18 @@ const fileItem = tv({
   variants: {
     state: {
       progress: {
-        container: '',
+        container: 'dark:border-zinc-700 dark:bg-zinc-800/30',
+        icon: 'dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-500',
       },
       complete: {
-        container: 'border-violet-500',
+        container: 'border-violet-500 bg-violet-500/5',
+        icon: 'dark:border-violet-800/70 dark:bg-violet-800/40 dark:text-white/60',
       },
       error: {
-        container: 'bg-error-25 border-error-300',
-        icon: 'border-error-50 bg-error-100 text-error-600',
-        deleteButton: 'text-error-700 hover:text-error-900',
+        container: 'bg-error-500/10 border-error-300',
+        icon: 'border-error-200 bg-error-300/80 text-error-900 dark:border-error-500/30 dark:bg-error-500/5 dark:text-error-400',
+        deleteButton:
+          'text-error-700 hover:text-error-900 hover:bg-error-200 dark:text-error-50 dark:hover:text-white',
       },
     },
   },
@@ -47,16 +50,18 @@ export function FileItem({ name, size, state }: FileItemProps) {
       </div>
 
       {state === 'error' ? (
-        <div className="flex flex-1 flex-col items-start gap-1">
+        <div className="flex flex-1 flex-col items-start gap-2">
           <div className="flex flex-col">
-            <span className="text-error-700 text-sm font-semibold">
+            <span className="text-sm font-semibold text-error-700 dark:text-white">
               Upload failed, please try again
             </span>
-            <span className="text-error-600 text-sm">{name}</span>
+            <span className="text-sm text-error-600 dark:text-white/80">
+              {name}
+            </span>
           </div>
           <button
             type="button"
-            className="text-error-700 hover:text-error-900 text-sm font-semibold"
+            className="text-sm font-semibold text-error-700 hover:text-error-900 dark:text-white/60 dark:hover:text-white"
           >
             Try again
           </button>
@@ -64,21 +69,23 @@ export function FileItem({ name, size, state }: FileItemProps) {
       ) : (
         <div className="flex flex-1 flex-col items-start gap-1">
           <div className="flex flex-col">
-            <span className="text-sm font-medium text-zinc-700">{name}</span>
-            <span className="text-sm font-medium text-zinc-500">
+            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-100">
+              {name}
+            </span>
+            <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
               {formatBytes(size)}
             </span>
           </div>
 
           <div className="flex w-full items-center gap-3">
-            <div className="h-2 flex-1 rounded-full bg-violet-200">
+            <div className="h-2 flex-1 rounded-full bg-violet-200 dark:bg-zinc-600">
               <div
-                className="h-2 rounded-full bg-violet-600"
+                className="h-2 rounded-full bg-violet-600 dark:bg-violet-400"
                 style={{ width: state === 'complete' ? '100%' : '80%' }}
               />
             </div>
 
-            <span className="text-sm font-medium text-zinc-700">
+            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {state === 'complete' ? '100%' : '80%'}
             </span>
           </div>

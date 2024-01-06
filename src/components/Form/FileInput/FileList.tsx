@@ -10,13 +10,15 @@ export function FileList() {
 
   return (
     <div ref={parent} className="mt-4 space-y-3">
-      {files.map((file) => {
+      {files.map((file, index) => {
         return (
           <FileItem
             key={file.name}
             size={file.size}
             name={file.name}
-            state="progress"
+            state={
+              index === 0 ? 'complete' : index === 1 ? 'error' : 'progress'
+            }
           />
         )
       })}

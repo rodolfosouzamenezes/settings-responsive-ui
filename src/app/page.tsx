@@ -43,14 +43,14 @@ export default function Home() {
         >
           <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
             <label
-              htmlFor="firstName"
+              htmlFor="name"
               className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
               Name
             </label>
             <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
               <Input.Root>
-                <Input.Control id="firstName" defaultValue="Rodolfo" />
+                <Input.Control id="name" placeholder="Your first name..." />
               </Input.Root>
 
               <div className="flex flex-col gap-3 lg:block">
@@ -61,7 +61,10 @@ export default function Home() {
                   Last name
                 </label>
                 <Input.Root>
-                  <Input.Control id="lastName" defaultValue="Menezes" />
+                  <Input.Control
+                    id="lastName"
+                    placeholder="Your last name..."
+                  />
                 </Input.Root>
               </div>
             </div>
@@ -81,7 +84,7 @@ export default function Home() {
               <Input.Control
                 id="email"
                 type="email"
-                defaultValue="rodolfosouzaofc@gmail.com"
+                placeholder="john.doe@gmail.com"
               />
             </Input.Root>
           </div>
@@ -111,7 +114,7 @@ export default function Home() {
               Role
             </label>
             <Input.Root>
-              <Input.Control id="role" defaultValue="Front-end Developer" />
+              <Input.Control id="role" placeholder="Your role..." />
             </Input.Root>
           </div>
 
@@ -134,7 +137,7 @@ export default function Home() {
               htmlFor="timezone"
               className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
-              timezone
+              Timezone
             </label>
             <Select placeholder="Select a timezone...">
               <SelectItem
@@ -201,7 +204,7 @@ export default function Home() {
 
               <TextArea
                 id="bio"
-                defaultValue="I'm a Product Designer based in Melbourne, Australia. I specialise in UX/UI design, brand strategy, and Webflow development."
+                placeholder="Write a brief introduction about yourself..."
               />
             </div>
           </div>

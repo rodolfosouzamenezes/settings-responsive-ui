@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -20,10 +20,10 @@ export function ThemeSwitcher() {
   return (
     <NavItem
       title="Theme"
-      icon={theme === 'dark' ? Moon : Sun}
+      icon={resolvedTheme === 'dark' ? Moon : Sun}
       hasChevron={false}
       onClick={() => {
-        setTheme(theme === 'dark' ? 'light' : 'dark')
+        setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }}
     />
   )

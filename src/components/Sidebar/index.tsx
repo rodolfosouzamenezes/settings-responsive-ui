@@ -20,6 +20,7 @@ import { Profile } from './profile'
 import * as Input from '../input'
 import { Logo } from './logo'
 import { Button } from '../button'
+import { ThemeSwitcher } from './theme-switcher'
 
 export function Sidebar() {
   return (
@@ -56,6 +57,7 @@ export function Sidebar() {
           <nav className="space-y-0.5">
             <NavItem title="Support" icon={LifeBuoy} hasChevron={false} />
             <NavItem title="Settings" icon={Cog} hasChevron={false} />
+            <ThemeSwitcher />
           </nav>
           <UsedSpaceWidget />
 

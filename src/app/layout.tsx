@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 
 import { Sidebar } from '@/components/Sidebar'
+import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,16 +18,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className="antialiased">
-      <body className={inter.className}>
-        <div className="min-h-screen lg:grid lg:grid-cols-app dark:bg-zinc-900">
-          <Sidebar />
+    <html suppressHydrationWarning lang="pt-BR" className="antialiased">
+      <Providers>
+        <body className={inter.className}>
+          <div className="min-h-screen lg:grid lg:grid-cols-app dark:bg-zinc-900">
+            <main className="max-w-[100vw] px-4 pb-12 pt-24 lg:col-start-2 lg:px-8 lg:pt-8">
+              <Sidebar />
 
-          <main className="max-w-[100vw] px-4 pb-12 pt-24 lg:col-start-2 lg:px-8 lg:pt-8">
-            {children}
-          </main>
-        </div>
-      </body>
+              {children}
+            </main>
+          </div>
+        </body>
+      </Providers>
     </html>
   )
 }
